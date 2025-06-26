@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body,
+button {
+    line-height: 1;
+    color: var(--white-color);
+}
+
+img {
+    object-fit: cover;
+    vertical-align: top;
+    max-width: 100%;
+    border: 0;
+}
+
+button {
+    border: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+address,
+i,
+em {
+    font-style: normal;
+}
+
+p {
+    word-break: keep-all;
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
