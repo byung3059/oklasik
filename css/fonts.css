@@ -3,4 +3,5 @@
 
 body {
     font-family: "Noto Sans KR";
+    color: var(--black-color);
 }

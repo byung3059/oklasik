@@ -12,7 +12,12 @@ dl {
     list-style: none;
 }
 
+strong {
+    display: block;
+}
+
 a {
+    display: block;
     text-decoration: none;
     color: inherit;
 }
@@ -20,7 +25,7 @@ a {
 body,
 button {
     line-height: 1;
-    color: var(--white-color);
+    color: var(--black-color);
 }
 
 img {
