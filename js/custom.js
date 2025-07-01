@@ -1,6 +1,16 @@
 $(function () {
 
-    const main_visual_slide = new Swiper('.main_visual_slide_box', {
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        // console.log(sct);
+        if (sct > 1) {
+            $('#header').addClass('on')
+        } else {
+            $('#header').removeClass('on')
+        }
+    });
+
+    const main_visual_slide = new Swiper('.main_visual_slide', {
         loop: true,
         effect: 'fade',
         fadeEffect: {
@@ -58,6 +68,51 @@ $(function () {
         let idx = $(this).index();
 
         main_visual_slide.slideToLoop(idx, 400);
+    });
+
+    const main_content_slide = new Swiper('.main_content_slide', {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".main_content_slide_arrow .arrow_next",
+            prevEl: ".main_content_slide_arrow .arrow_prev",
+        },
+    });
+
+    const main_review_left_slide = new Swiper('.main_review_left_slide', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        allowTouchMove: false,
+    });
+    const main_review_right_slide = new Swiper('.main_review_right_slide', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        allowTouchMove: false,
+    });
+    $('.main_review_arrow_box .arrow_next_p>button').on('click', function () {
+        main_review_left_slide.slidePrev();
+        main_review_right_slide.slidePrev();
+    });
+    $('.main_review_arrow_box .arrow_prev_p>button').on('click', function () {
+        main_review_left_slide.slideNext();
+        main_review_right_slide.slideNext();
+    });
+    const main_event_slide = new Swiper('.main_event_slide', {
+        loop: false,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        scrollbar: {
+            el: ".main_event_nav_line",
+            draggable: true,
+        },
     });
 
 
