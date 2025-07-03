@@ -10,6 +10,14 @@ $(function () {
         }
     });
 
+    $('#header .gnb').on('mouseover', function () {
+        $('#header').addClass('gnb_enter');
+    });
+    $('#header .gnb').on('mouseleave', function () {
+        $('#header').removeClass('gnb_enter');
+    });
+
+
     const main_visual_slide = new Swiper('.main_visual_slide', {
         loop: true,
         effect: 'fade',
