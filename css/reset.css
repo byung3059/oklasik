@@ -44,10 +44,15 @@ button {
 
 input {
     border-radius: 0;
+    outline: none;
 }
 
-input:focus {
+input:focus,
+input:active,
+button:focus,
+button:active {
     outline: none;
+    box-shadow: none;
 }
 
 address,

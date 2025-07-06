@@ -2557,10 +2557,7 @@
         background: var(--pri-color);
     }
 
-    #sitemap .top {
-        padding: 0 16px;
-        height: 80px;
-    }
+    #sitemap .top {}
 
     #sitemap .top .logo>a {
         background-image: url(../images/logo_w.svg);
@@ -2629,15 +2626,8 @@
         background: var(--white-color);
     }
 
-
     #sitemap .bottom .gnb>ul>li>a.on::after {
         display: none;
-    }
-
-    #sitemap .bottom .gnb .sub_menu>li>a {
-        font-size: 14px;
-        line-height: 56px;
-        color: var(--white-color);
     }
 
     #sitemap .bottom .gnb .sub_menu {
@@ -2651,11 +2641,39 @@
     #sitemap .bottom .gnb .sub_menu>li~li::before {
         content: none;
     }
+
+    #sitemap .bottom .gnb .sub_menu>li>a {
+        font-size: 14px;
+        line-height: 56px;
+        color: var(--white-color);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #sitemap .bottom .gnb .sub_menu>li:last-child>a {
+        border-bottom: none;
+    }
+
+}
+
+@media(max-width: 768px) {
+    #sitemap .top {
+        height: 80px;
+        padding: 0 16px;
+    }
+
+    #sitemap .bottom .gnb>ul>li>a::before {
+        right: 16px;
+    }
+
+    #sitemap .bottom .gnb>ul>li>a::after {
+        right: 16px;
+    }
 }
 
 @media(max-width: 480px) {
     #sitemap .top {
         height: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     #sitemap .top .site_map_btn>button {
@@ -2680,11 +2698,32 @@
         transform: translate(-50%, -50%) rotate(45deg);
     }
 
-    #sitemap .bottom .gnb .sub_menu {
-        max-height: 144px;
+    #sitemap .inner .bottom {
+        height: 100%;
+        padding: 60px 0 0 0;
+
     }
 
-    #sitemap .bottom .gnb .sub_menu>li>a {
-        line-height: 48px;
+    #sitemap .bottom .gnb {
+        height: 100%;
+        overflow: auto;
     }
+
+    #sitemap .bottom .gnb>ul>li>a {
+        padding: 0 16px;
+        text-align: left;
+    }
+
+    #sitemap .bottom .gnb .sub_menu {
+        max-height: unset;
+    }
+
+
+    #sitemap .bottom .gnb .sub_menu>li>a {
+        padding: 0 16px;
+        text-align: left;
+        line-height: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
 }
