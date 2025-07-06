@@ -382,7 +382,7 @@
 }
 
 .main_visual .itm .slg strong:nth-child(2) {
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
 }
 
 .main_visual .itm .slg p span {
@@ -404,7 +404,7 @@
     display: block;
     font-size: 56px;
     font-weight: 800;
-    line-height: 56px;
+    line-height: 60px;
     color: var(--white-color);
 
     transform: translate(0, 100%);
@@ -606,11 +606,11 @@
 
     .main_visual .itm .slg strong span {
         font-size: 48px;
-        line-height: 48px;
+        line-height: 52px;
     }
 
     .main_visual .itm .slg strong:nth-child(2) {
-        margin: 0 0 12px 0;
+        margin: 0 0 8px 0;
     }
 
     .main_visual .itm .slg .btn_w {
@@ -629,7 +629,7 @@
 
     .main_visual .itm .slg strong span {
         font-size: 40px;
-        line-height: 40px;
+        line-height: 44px;
     }
 
     .main_visual .itm .slg {
@@ -684,7 +684,7 @@
 
     .main_visual .itm .slg strong span {
         font-size: 32px;
-        line-height: 32px;
+        line-height: 36px;
     }
 
     .main_visual .itm .slg .btn_w {
@@ -709,11 +709,13 @@
         background-position-x: 75%;
     }
 
-    .main_visual .itm .slg p span {}
+    .main_visual .itm .slg strong:nth-child(2) {
+        margin: 0 0 4px 0;
+    }
 
     .main_visual .itm .slg strong span {
         font-size: 28px;
-        line-height: 28px;
+        line-height: 32px;
     }
 
 }
@@ -721,7 +723,7 @@
 @media(max-width: 380px) {
     .main_visual .itm .slg strong span {
         font-size: 24px;
-        line-height: 24px;
+        line-height: 28px;
     }
 }
 
