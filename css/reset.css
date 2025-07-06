@@ -42,6 +42,14 @@ button {
     cursor: pointer;
 }
 
+input {
+    border-radius: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
 address,
 i,
 em {
