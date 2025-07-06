@@ -13,9 +13,17 @@ $(function () {
     $('#header .gnb').on('mouseover', function () {
         $('#header').addClass('gnb_enter');
     });
+
     $('#header .gnb').on('mouseleave', function () {
         $('#header').removeClass('gnb_enter');
     });
+
+    $('#header .site_map_btn').on('click', function () {
+        $('#sitemap').addClass('on')
+    })
+    $('#sitemap .site_map_btn button').on('click', function () {
+        $('#sitemap').removeClass('on')
+    })
 
 
     const main_visual_slide = new Swiper('.main_visual_slide', {
@@ -27,6 +35,10 @@ $(function () {
         autoplay: {
             delay: 10000,
             disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".m_main_visual_slide_arrow .arrow_next",
+            prevEl: ".m_main_visual_slide_arrow .arrow_prev",
         },
 
         on: {
@@ -79,31 +91,70 @@ $(function () {
     });
 
     const main_content_slide = new Swiper('.main_content_slide', {
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
+
+
+        slidesPerView: 1,
         spaceBetween: 30,
+        scrollbar: {
+            el: ".main_content_nav_line",
+            draggable: true,
+        },
         navigation: {
             nextEl: ".main_content_slide_arrow .arrow_next",
             prevEl: ".main_content_slide_arrow .arrow_prev",
         },
+        breakpoints: {
+
+            1501: {
+                slidesPerView: 'auto',
+
+            },
+            769: {
+                centeredSlides: true,
+                slidesPerView: 1.4,
+            },
+            481: { loop: true, }
+
+
+        }
     });
 
     const main_review_left_slide = new Swiper('.main_review_left_slide', {
-        loop: true,
+
         effect: 'fade',
         fadeEffect: {
             crossFade: true,
         },
+        scrollbar: {
+            el: ".main_review_nav_line",
+            draggable: true,
+        },
         slidesPerView: 1,
         spaceBetween: 30,
-        allowTouchMove: false,
+        allowTouchMove: true,
+        breakpoints: {
+
+            561: {
+                loop: true,
+                allowTouchMove: false,
+            },
+
+        },
+
     });
     const main_review_right_slide = new Swiper('.main_review_right_slide', {
         loop: true,
         slidesPerView: 'auto',
-        spaceBetween: 30,
+        spaceBetween: 16,
         allowTouchMove: false,
+        breakpoints: {
+
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+
+        },
     });
     $('.main_review_arrow_box .arrow_next_p>button').on('click', function () {
         main_review_left_slide.slidePrev();
@@ -115,13 +166,44 @@ $(function () {
     });
     const main_event_slide = new Swiper('.main_event_slide', {
         loop: false,
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: 30,
         scrollbar: {
             el: ".main_event_nav_line",
             draggable: true,
         },
-    });
+        breakpoints: {
+            481: {
+                slidesPerView: 2,
+            },
+            769: {
+                slidesPerView: 3,
+            },
+            1201: {
+                slidesPerView: 4,
+            }
 
+        },
+    });
+    $('#sitemap .gnb>ul>li>a').on('click', function (e) {
+        if ($(window).width() <= 1024) {
+            $(this).parent().siblings().find('.sub_menu').stop().slideUp(300);
+            if ($(this).next().hasClass('sub_menu')) {
+                e.preventDefault();
+                $(this).next().stop().slideToggle(300);
+            }
+        };
+
+        if ($(this).hasClass('on')) {
+            // 이미 on이 있으면 제거
+            $(this).removeClass('on');
+        } else {
+            // 전체에서 on 제거 후 자신만 추가
+            $('#sitemap .gnb > ul > li > a').removeClass('on');
+            $(this).addClass('on');
+        }
+
+
+    });
 
 })

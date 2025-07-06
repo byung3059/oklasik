@@ -34,6 +34,7 @@
 
 .tit strong {
     display: block;
+    text-align: center;
     margin: 0 0 24px 0;
     font-size: 24px;
     line-height: 24px;
@@ -53,7 +54,11 @@
     display: block;
 }
 
-.br_m {
+.br_m_768 {
+    display: none;
+}
+
+.br_m_480 {
     display: none;
 }
 
@@ -114,9 +119,145 @@
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.swiper-scrollbar {
+    margin: 0 auto;
+    position: static !important;
+}
 
-@media(max-width: 1490px) {
+.swiper-scrollbar .swiper-scrollbar-drag {
+    cursor: pointer;
+    background: var(--pri-color);
+}
+
+@media(max-width: 1500px) {
     .inner {
         padding: 0 40px;
+    }
+
+    .tit h2 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    .tit strong {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .btn_p {
+        width: 160px;
+    }
+
+    .btn_p>a {
+        font-size: 14px;
+        line-height: 46px;
+        max-height: 48px;
+    }
+
+    .btn_w {
+        width: 160px;
+    }
+
+    .btn_w>a {
+        font-size: 14px;
+        line-height: 46px;
+        max-height: 48px;
+    }
+
+}
+
+@media(max-width: 1024px) {
+    .default {
+        padding: 80px 0;
+    }
+
+    .tit h2 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .tit strong {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .br_pc {
+        display: none;
+    }
+
+    .br_m_768 {
+        display: block;
+    }
+
+    .inner {
+        padding: 0 16px;
+    }
+
+    .tit h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .tit strong {
+        margin: 0 0 16px 0;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .tit p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .btn_p {
+        width: 140px;
+    }
+
+    .btn_p>a {
+        font-size: 12px;
+        line-height: 38px;
+        max-height: 40px;
+    }
+
+    .btn_w {
+        width: 140px;
+    }
+
+    .btn_w>a {
+        font-size: 12px;
+        line-height: 38px;
+        max-height: 40px;
+    }
+}
+
+@media(max-width: 480px) {
+    .br_m_768 {
+        display: none;
+    }
+
+    .br_m_480 {
+        display: block;
+    }
+
+    .default {
+        padding: 60px 0;
+    }
+
+    .tit {
+        margin: 0 0 24px 0;
+    }
+
+    .tit h2 {
+        margin: 0 0 16px 0;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .tit strong {
+        margin: 0 0 12px 0;
+        font-size: 16px;
+        line-height: 16px;
     }
 }
