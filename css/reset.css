@@ -45,6 +45,7 @@ button {
 input {
     border-radius: 0;
     outline: none;
+
 }
 
 input:focus,
