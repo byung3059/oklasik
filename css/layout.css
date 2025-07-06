@@ -50,9 +50,6 @@
     color: var(--black-sub-color);
 }
 
-.br_pc {
-    display: block;
-}
 
 .br_m_768 {
     display: none;
@@ -60,6 +57,10 @@
 
 .br_m_480 {
     display: none;
+}
+
+.br_pc {
+    display: block;
 }
 
 /* 화살표 */
