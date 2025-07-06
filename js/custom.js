@@ -106,10 +106,12 @@ $(function () {
         breakpoints: {
 
             1501: {
+                loop: true,
                 slidesPerView: 'auto',
-
+                centeredSlides: true,
             },
             769: {
+                loop: true,
                 centeredSlides: true,
                 slidesPerView: 1.4,
             },
