@@ -207,4 +207,20 @@ $(function () {
 
     });
 
-})
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 })
+    });
+
+
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+
+        if (sct > 200) {
+            $('.to_top').addClass('on')
+        } else {
+            $('.to_top').removeClass('on')
+        }
+    });
+
+
+});
